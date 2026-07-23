@@ -15,6 +15,14 @@ class PhoneInfo:
     else:
       print(f'이름 : {self.name}, 전화번호 : {self.phone_number}')
 
+  def __eq__(self, other):
+    if isinstance(other, PhoneInfo):
+      return self.name == other.name
+    return False
+
+  def __hash__(self):
+    return hash(self.name)
+
 class PhoneUnivInfo(PhoneInfo):
   def __init__(self, name, phone_number, major, birth=None, region=None):
     super().__init__(name, phone_number, birth, region)
