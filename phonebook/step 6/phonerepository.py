@@ -26,7 +26,7 @@ class PhoneRepository:
     print('[시스템] 파일 저장 완료')
 
   def load(self):
-    loaded_data = []
+    loaded_data = set()
     if not os.path.exists(self.file_name):
       return loaded_data
     
@@ -44,6 +44,6 @@ class PhoneRepository:
         else:
           info = PhoneInfo(name, num, birth=birth, region=region)
         
-        loaded_data.append(info)
+        loaded_data.add(info)
     print('[시스템] 파일 로드 완료')
     

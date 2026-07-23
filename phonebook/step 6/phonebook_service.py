@@ -5,7 +5,6 @@ from phone_info import PhoneCompanyInfo
 class PhoneBookService:
   def __init__(self):
     self.phonebook = []
-    # self.phonebook = set(self.phonebook)
 
   def read_data(self):
     print('1.일반, 2.대학, 3.회사')
