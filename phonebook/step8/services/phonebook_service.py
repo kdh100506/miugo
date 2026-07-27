@@ -117,4 +117,5 @@ class PhoneBookService:
         # 외부 대신 내부에서 스스로 repository를 호출해 저장합니다.
         self.repository.save(self.info_storage)
 
+
 instance = PhoneBookService()
