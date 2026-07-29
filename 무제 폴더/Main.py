@@ -1,14 +1,17 @@
-from login import Start_Menu
+from Login import Start_Menu
 from PrincessMakerSystem import PrincessMaker
 from Story import MainStory
 
 def main():
+    current_user = None  # 메인 루프 전체에서 로그인 상태 유지
+    
     while True:
-        user = Start_Menu()
-        if user is None:
+        # 로그인 상태를 Start_Menu에 전달
+        current_user = Start_Menu(current_user)
+        if current_user is None:  # 사용자가 '0. 종료'를 선택한 경우
             break
 
-        Princess = PrincessMaker(user)
+        Princess = PrincessMaker(current_user)
         Story = MainStory
 
         # Scene 1 ~ 14 데이터 구조화
@@ -170,10 +173,10 @@ def main():
         ]
 
         # 1신이면 오프닝 실행
-        if user.current_scene == 1:
+        if current_user.current_scene == 1:
             Story.Opening()
 
-        start_index = user.current_scene - 1
+        start_index = current_user.current_scene - 1
 
         # 저장된 신부터 진행
         for i in range(start_index, len(scenes)):
@@ -206,7 +209,7 @@ def main():
                     break
 
         # 14번 신까지 완료했을 때 엔딩 출력
-        if user.current_scene > 14:
+        if current_user.current_scene > 14:
             print("\n" + "="*30 + " 엔딩 " + "="*30)
             Princess.Ending_Choice()
             # 다음 회차 플레이를 위해 Scene 위치 1로 리셋

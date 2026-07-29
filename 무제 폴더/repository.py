@@ -1,6 +1,6 @@
 import pandas as pd
 import os
-from info import Login
+from Info import Login
 
 class Repository:
     def __init__(self, file_name="user_repository.csv"):

@@ -1,6 +1,6 @@
 import time
 import random as rd
-from repository import repo
+from Repository import repo
 
 class PrincessMaker:
     def __init__(self, user):
@@ -84,10 +84,6 @@ class PrincessMaker:
         down_40 = [j for i, j in self.Stats.items() if j <= 40]
         return len(down_40) > 0 and self.Stats['Morality'] <= 40
 
-    def Ending6(self):
-        up_100 = [i for i, j in self.Stats.items() if j >= 100]
-        return 'Tenacity' in up_100
-
     def LegendaryGreatGeneral(self):
         self.speak("18세가 되던 해, 딸은 왕국 기사단 시험을 수석으로 통과하고 수많은 전장에서 승리를 이끌어 왕국 역사상 최초의 '대장군' 자리에 오릅니다.", 6)
         self.speak('거대한 갑옷과 검을 차고 수천 기병을 이끄는 위풍당당한 장군이 되었지만,', 3)
@@ -123,9 +119,6 @@ class PrincessMaker:
         self.speak('세상을 구한 용사의 집이라는 세상에서 가장 안전하고 따뜻한 둥지에서, 딸은 "우주 제일의 집순이"가 되기로 결심합니다.', 4)
         self.speak('하루 종일 만화책을 보고 주전부리를 털어먹으며 빈둥거리지만, 아버지에게 애교 하나만큼은 끝내주게 떨어댑니다.', 4)
 
-    def queenbee(self):
-        self.speak('딸은 자신의 매력으로 수많은 남자들을 홀리며 최악의 여왕벌로 다시 태어났습니다.')
-
     def Ending_Choice(self):
         if self.Ending1():
             self.LegendaryQueen()
@@ -137,7 +130,5 @@ class PrincessMaker:
             self.Thelegendaryinnclerk()
         elif self.Ending5():
             self.LegendaryThief()
-        elif self.Ending6():
-            self.queenbee()
         else:
             self.knitters()

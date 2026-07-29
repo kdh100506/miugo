@@ -3,8 +3,8 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
-from info import Login
-from repository import repo as repo
+from Info import Login
+from Repository import repo as repo
 
 class LoginSystem:
     def check_space(ordinal_number):
