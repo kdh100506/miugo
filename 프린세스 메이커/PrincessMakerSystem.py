@@ -134,7 +134,7 @@ class PrincessMaker:
             self.knitters()
 
     def reset_stats(self):
-        """딸의 스탯을 초기 상태(0)로 리셋"""
+        #딸의 스탯을 초기 상태(0)로 리셋
         self.Stats = {
             'Stamina': 0,
             'MuscularStrength': 0,
