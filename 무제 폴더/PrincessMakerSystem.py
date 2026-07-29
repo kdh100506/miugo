@@ -158,6 +158,16 @@ class PrincessMaker:
     else:
       return False
 
+  def Ending6(self):
+    up_100 = []
+    for i,j in self.Stats.items():
+      if j >= 100:
+        up_100.append(i)
+    if 'Tenacity' in up_100:
+      return True
+    else:
+      return False
+
   def speak(self, say,wait):
     print(say)
     time.sleep(wait)
@@ -211,5 +221,7 @@ class PrincessMaker:
       self.Thelegendaryinnclerk()
     elif self.Ending5():
       self.LegendaryThief()
+    elif self.Ending6():
+      self.queenbee()
     else:
       self.knitters()

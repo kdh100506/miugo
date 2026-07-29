@@ -2,6 +2,7 @@ from PrincessMakerSystem import PrincessMaker
 from Story import MainStory
 from Story import skip
 from system import LoginSystem
+from login import Start_Menu
 import pandas as pd
 import numpy as np
 import seaborn as sns
@@ -10,8 +11,9 @@ import time
 def main():
     Princess = PrincessMaker('/Users/dgsw12/Desktop/미유고/무제 폴더/Stats.csv')
     Story = MainStory
-    Login = LoginSystem
 
+    Start_Menu()
+    
     Princess.Save_Stats()
     Story.Opening()
 
