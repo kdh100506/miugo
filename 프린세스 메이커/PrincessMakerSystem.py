@@ -132,3 +132,16 @@ class PrincessMaker:
             self.LegendaryThief()
         else:
             self.knitters()
+
+    def reset_stats(self):
+        """딸의 스탯을 초기 상태(0)로 리셋"""
+        self.Stats = {
+            'Stamina': 0,
+            'MuscularStrength': 0,
+            'Intellect': 0,
+            'Dignity': 0,
+            'Tenacity': 0,
+            'Attractiveness': 0,
+            'Morality': 0
+        }
+        self.user.stats = self.Stats

@@ -212,7 +212,8 @@ def main():
         if current_user.current_scene > 14:
             print("\n" + "="*30 + " 엔딩 " + "="*30)
             Princess.Ending_Choice()
-            # 다음 회차 플레이를 위해 Scene 위치 1로 리셋
+            # 엔딩 완료 후 다음 회차를 위해 스탯 리셋 및 Scene 위치 1 저장[cite: 4, 5]
+            Princess.reset_stats()
             Princess.Save_Stats(scene_num=1)
 
 if __name__ == "__main__":
