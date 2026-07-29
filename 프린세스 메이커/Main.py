@@ -14,7 +14,6 @@ def main():
         Princess = PrincessMaker(current_user)
         Story = MainStory
 
-        # Scene 1 ~ 14 데이터 구조화
         scenes = [
             {
                 "num": 1, "story_func": Story.Scene1,
@@ -212,7 +211,7 @@ def main():
         if current_user.current_scene > 14:
             print("\n" + "="*30 + " 엔딩 " + "="*30)
             Princess.Ending_Choice()
-            # 엔딩 완료 후 다음 회차를 위해 스탯 리셋 및 Scene 위치 1 저장[cite: 4, 5]
+            # 엔딩 완료 후 다음 회차를 위해 스탯 리셋 및 Scene 위치 1 저장
             Princess.reset_stats()
             Princess.Save_Stats(scene_num=1)
 
