@@ -13,7 +13,10 @@ class PrincessMaker:
                   'Morality' : 0}
     
   def View_Stats(self):
-      print('=' * 100)
+      print()
+      print()
+      print()
+      print('=' * 170)
       print('캐릭터 능력치')
       print(f'체력 : {self.Stats["Stamina"]}')
       print(f'근력 : {self.Stats["MuscularStrength"]}')
@@ -22,7 +25,10 @@ class PrincessMaker:
       print(f'근성 : {self.Stats["Tenacity"]}')
       print(f'매력 : {self.Stats["Attractiveness"]}')
       print(f'도덕성 : {self.Stats["Morality"]}')
-      print('=' * 100)
+      print('=' * 170)
+      print()
+      print()
+      print()
 
   def Save_Stats(self):
     Stats = pd.DataFrame({'체력' : [self.Stats['Stamina']], '근력' : [self.Stats['MuscularStrength']],
@@ -44,16 +50,19 @@ class PrincessMaker:
     return None
 
   def Choice(self, Question, Option, After_Option, Plus_Stats, Minus_Stats):
-    print('=' *100)
+    print('=' *170)
     print(Question)
     print(f'1. {Option[0]}')
     print(f'2. {Option[1]}')
     print(f'3. {Option[2]}')
     print(f'4. {Option[3]}')
-    print('=' *100)
+    print('=' *170)
     while True:
       answer = input('선택 : ')
       if answer == '1':
+        print()
+        print()
+        print()
         for i in After_Option[0]:
           self.speak(i,2)
         self.Plus_Stats(Plus_Stats[0])
@@ -62,6 +71,9 @@ class PrincessMaker:
         self.View_Stats()
         return None
       elif answer =='2':
+        print()
+        print()
+        print()
         for i in After_Option[1]:
                   self.speak(i,2)
         self.Plus_Stats(Plus_Stats[1])
@@ -70,6 +82,9 @@ class PrincessMaker:
         self.View_Stats()
         return None
       elif answer == '3':
+        print()
+        print()
+        print()
         for i in After_Option[2]:
                   self.speak(i,2)
         self.Plus_Stats(Plus_Stats[2])
@@ -78,6 +93,9 @@ class PrincessMaker:
         self.View_Stats()
         return None
       elif answer == '4':
+        print()
+        print()
+        print()
         for i in After_Option[3]:
                   self.speak(i,2)
         self.Plus_Stats(Plus_Stats[3])
@@ -178,6 +196,9 @@ class PrincessMaker:
     self.speak('딸은 용사 아버지가 그동안 몬스터를 잡고 모아둔 전통 있는 퇴직금과 연금의 존재를 깨달아 버린 것이었습니다!',4)
     self.speak('세상을 구한 용사의 집이라는 세상에서 가장 안전하고 따뜻한 둥지에서, 딸은 "우주 제일의 집순이"가 되기로 결심합니다.',4)
     self.speak('하루 종일 만화책을 보고 주전부리를 털어먹으며 빈둥거리지만, 아버지에게 애교 하나만큼은 끝내주게 떨어댑니다.',4)
+
+  def queenbee(self):
+    self.speak('딸은 자신의 매력으로 수많은 남자들을 홀리며 최악의 여왕벌로 다시 태어나였다.')
 
   def Ending_Choice(self):
     if self.Ending1():

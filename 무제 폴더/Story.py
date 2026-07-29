@@ -4,11 +4,14 @@ def skip():
     while True:
         is_skip = input('스킵하시겠습니까? (Y/N) : ')
         if is_skip == 'Y':
+            print()
             return True
         elif is_skip == 'N':
+            print()
             return False
         else:
             print('잘못된 입력입니다.')
+            print()
             continue
 
 class MainStory:
